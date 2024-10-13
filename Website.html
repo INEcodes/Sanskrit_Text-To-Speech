@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text-to-Speech System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    label {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: none;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    audio {
+      width: 100%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Sanskrit-Text-to-Speech System</h1>
+  <label for="text">Enter your text:</label>
+  <textarea id="text" placeholder="Type your text here..."></textarea>
+  <button onclick="synthesize()">Synthesize</button>
+  <audio id="audio" controls style="display: none;"></audio>
+</div>
+
+<script>
+  function synthesize() {
+    var text = document.getElementById('text').value;
+    // Here you would make a request to your server to generate audio from the text
+    // You can use technologies like Web Speech API or send the text to a server-side script
+    // that converts text to speech and returns the audio file.
+    // For simplicity, I'll just log the text to the console.
+    console.log("Text to be synthesized:", text);
+
+    // For demonstration purposes, I'll use a dummy audio file
+    var audioUrl = "./output.mp3";
+    var audio = document.getElementById('audio');
+    audio.src = audioUrl;
+    audio.style.display = "block";
+    audio.play();
+  }
+</script>
+
+</body>
+</html>
